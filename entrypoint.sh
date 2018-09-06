@@ -11,5 +11,10 @@ fi
 echo "Using Zookeeper host: '$ZK_HOST'";
 sed -i -e s#{{ZK_HOST}}#${ZK_HOST}# "$TRIFECTA_CONFIG"
 
+zkpath=${ZK_PATH:-/}
+
+echo "Using Zookeeper host: '$zkpath'";
+sed -i -e s#{{ZK_PATH}}#${zkpath}# "$TRIFECTA_CONFIG"
+
 # Start ui
 /home/trifecta/trifecta_ui/bin/trifecta_ui -Dpidfile.path=/dev/null
